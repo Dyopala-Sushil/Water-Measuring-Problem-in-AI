@@ -1,13 +1,14 @@
 #Python script for die hard water puzzle or water jug problem or measurement problem in AI
 
 class DieHardWaterPuzzle():
-    def __init__(self,x=0,y=0,xsize = 7, ysize = 5, desiredVolume=6):
+    def __init__(self,x=0,y=0,xsize = 7, ysize = 5, desiredVolume=6, max_iter=20):
         self.x = x   #current state of larger container
         self.y = y   #current state of smaller container
         self.xsize = xsize   #capacity of larger container
         self.ysize = ysize   #capacity of smaller container
         self.desiredVolume = desiredVolume   #volume to be measured
         self.solution_states = [(0,0)]   #list containing all the solution sates
+        self.max_iter = max_iter
 
     #pour water from lager container to smaller container
     def pour(self):
@@ -41,6 +42,7 @@ class DieHardWaterPuzzle():
 
     #recursion to find all the sates to the goal state
     def GoalFinder(self):
+        self.max_iter-=1
         if self.GoalCheck() :
             return True
 
@@ -63,11 +65,11 @@ class DieHardWaterPuzzle():
         if self.GoalCheck() :
             return True
 
+        if self.max_iter==0:
+            return False
 
         if self.GoalFinder():
             return True
-
-        return False
         
     
 if __name__ == "__main__":
@@ -75,7 +77,7 @@ if __name__ == "__main__":
     ysize = int(input("Enter the size of smaller container : "))
     desiredVolume = int(input("Enter the desired volume : "))
 
-    puzzle = DieHardWaterPuzzle(xsize=xsize, ysize=ysize, desiredVolume=desiredVolume)
+    puzzle = DieHardWaterPuzzle(xsize=xsize, ysize=ysize, desiredVolume=desiredVolume, max_iter=30)
     if puzzle.GoalFinder():
         print("\nSolution States :\n")
         for i,item in enumerate(puzzle.solution_states):
@@ -83,7 +85,6 @@ if __name__ == "__main__":
     else:
         print("Solution Not Found")
     
-
 
 
 
