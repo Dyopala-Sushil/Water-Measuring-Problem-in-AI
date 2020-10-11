@@ -1,0 +1,59 @@
+output1:
+
+Enter the size of bigger container :5
+Enter the size of smaller container : 3
+Enter the desired volume : 4
+
+Solution States :
+
+State 0 : (0, 0)
+State 1 : (5, 0)
+State 2 : (2, 3)
+State 3 : (0, 2)
+State 4 : (5, 2)
+State 5 : (4, 3)
+State 6 : (4, 0)
+
+-----------------------------------------------
+output2:
+
+Enter the size of bigger container :11
+Enter the size of smaller container : 9
+Enter the desired volume : 10
+
+Solution States :
+
+State 0 : (0, 0)
+State 1 : (11, 0)
+State 2 : (2, 9)
+State 3 : (0, 2)
+State 4 : (11, 2)
+State 5 : (4, 9)
+State 6 : (0, 4)
+State 7 : (11, 4)
+State 8 : (6, 9)
+State 9 : (0, 6)
+State 10 : (11, 6)
+State 11 : (8, 9)
+State 12 : (0, 8)
+State 13 : (11, 8)
+State 14 : (10, 9)
+State 15 : (10, 0)
+
+-----------------------------------------------
+
+output3
+
+Enter the size of bigger container :4
+Enter the size of smaller container : 3
+Enter the desired volume : 2
+
+Solution States :
+
+State 0 : (0, 0)
+State 1 : (4, 0)
+State 2 : (1, 3)
+State 3 : (0, 1)
+State 4 : (4, 1)
+State 5 : (2, 3)
+State 6 : (2, 0)
